@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cisum-Evil | Sitio oficial</title>
+        <link rel="icon" type="image/png" href="./img/logo.png" sizes="64x64">
+        <script defer src="js/main.js"></script>
+        <script defer src="js/json.js"></script>
+        <script defer src="js/objects.js"></script>
+        <script defer src="js/gracias.js"></script>
+        <script defer src="js/storage.js"></script>
+        <script src="js/JQuery-3.5.1.min.js"></script>
+        <script defer src="js/inforoaster.js"></script>
+        <!-- <script defer src="js/animaciones.js"></script> -->
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-bordeaux">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><h2 class="logo">Cisum Evil</h2></a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#aboutUs">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#roaster">Artistas</a>
+                        </li><li class="nav-item">
+                            <a class="nav-link" href="#contrataciones">Contrataciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactanos">Contacto</a>
+                        </li>
+                      </ul>
+                </div>
+              </nav>    
+        </header>
+        <section id="hero" class="d-flex flex-column justify-content-center align-items-start">
+            <h1 class="blur">Cisum Evil</h1>
+            <h3 class="blur">Booking & Management</h3>
+        </section>
+        <section id="aboutUs">
+            <h2 class="blur">Sobre nosotros</h2>
+            <h4 class="blur">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quos perspiciatis autem. Vero totam, harum exercitationem animi eius voluptates quia excepturi ipsam, deserunt sed nesciunt, incidunt aliquid mollitia ut officia cumque itaque architecto doloribus quos fugiat magni odit dicta voluptate? Voluptatibus officiis molestias odio assumenda quidem asperiores quibusdam? Reiciendis consequuntur nostrum perspiciatis deleniti excepturi esse commodi minus impedit dolorum libero, nam totam eum, sed voluptate quasi beatae nobis veritatis eos. Nobis quasi molestias explicabo sint impedit labore mollitia molestiae pariatur?</h4>
+        </section>
+        <section id="servicios">
+            <h2 class="blur">Servicios</h2>
+            <div class="blur servicios-lista d-flex flex-row justify-content-around">
+                <div class="servicios-caja d-flex flex-column p-5">
+                    <h3>Management</h3>
+                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, aut reprehenderit laborum exercitationem neque sunt voluptas, necessitatibus eos iste quidem praesentium laboriosam deserunt rerum impedit!</h4>
+                </div>
+                <div class="servicios-caja d-flex flex-column p-5">
+                    <h3>Booking</h3>
+                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, aut reprehenderit laborum exercitationem neque sunt voluptas, necessitatibus eos iste quidem praesentium laboriosam deserunt rerum impedit!</h4>
+                </div>
+            </div>
+        </section>
+        <section id="roaster">
+            <h2>Nuestros Artistas</h2>
+            <div id="contenido" class="roaster-lista d-flex flex-row justify-content-around"></div>
+        </section>
+        <section id="contrataciones" class="d-flex flex-row">
+            <div class="col-md-6">
+            <h2>Contratataciones</h2>
+            <h4>¿Querés tener a alguno de nuestros artistas en tu evento? Conocé las tarifas</h4>
+            <fieldset class="d-flex flex-column">
+                <label for="opcion_artistas">Artista</label>
+                <select name="opcion_artistas" id="opcion_artistas">
+                </select>   
+                <label for="opcion_venue">Zona del evento</label>
+                <select name="opcion_venue" id="opcion_venue">
+                </select> 
+                <label for="opcion_tipo">Tipo de evento</label>
+                <select name="opcion_tipo" id="opcion_tipo"> </select>
+                <label for="QShows">Cantidad de shows</label>
+                <input type="text" name="QShows" id="QShows" placeholder="#">   
+                <div>
+                    <input type="checkbox" name="transporte" id="transporte" class="check"> El contratante se encargará del transporte
+                </div>  
+                <input type="submit" name="enviar" value="Enviar" id="enviarCont">          
+            </fieldset>
+            </div>
+        </section>
+        <section id="contactanos">
+            <h2>Contactanos</h2>
+            <form onsubmit="gracias()" method="POST" class="formulario" id="formContact">
+                <fieldset class="d-flex flex-column" id="fieldsetForm">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" placeholder="Tu nombre" class="campoForm">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Tu Apellido" class="campoForm">
+                    <div>
+                        <input type="checkbox" name="empresa" value="si" class="check" class="campoForm">Me contacto en representación de una empresa u organización
+                    </div>  
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Tu correo electronico" class="campoForm"> 
+                    <label for="opcion_contacto">Motivo de contacto</label>
+                    <select name="opcion_contacto" id="opcion_contacto" class="campoForm">
+                        <option>Representación</option>
+                        <option>Contrataciones</option>                  
+                        <option>Prensa</option>
+                        <option>Tour</option>             
+                        <option>Otros</option>
+                    </select>             
+                    <div>
+                        <input type="checkbox" name="newsletter" value="si" class="check" class="campoForm">Deseo suscribirme al newsletter
+                    </div>      
+                    <label for="asunto">Asunto</label>
+                    <input type="text" name="asunto" id="asunto" placeholder="Breve descripción del mensaje" class="campoForm"> 
+                    <textarea name="mensaje" cols="25" rows="10" placeholder="Mensaje"></textarea> 
+                    <input type="submit" name="enviar" onclick="gracias ()" value="Enviar">    
+                </fieldset>
+                <h3 id="muchasGracias"></h3>
+            </form>
+        </section>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    </body>
+</html>

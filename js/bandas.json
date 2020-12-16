@@ -1,0 +1,29 @@
+[
+    {
+       "id": 1,
+       "foto": "https://picsum.photos/id/452/350/250",
+       "banda": "Cuore di Belladona",
+       "formacion": "2010",
+       "genero": "pop-rock, alternativo, electro-pop",
+       "discos": 4,
+       "integrantes": "Melisa A., Jacinto B, Narciso B., Rosa C., Violeta D."
+    },
+    {
+       "id": 2,
+       "foto": "https://picsum.photos/id/777/350/250",
+       "banda": "Dawn to Midday",
+       "formacion": "2016",
+       "genero": "pop, country-pop, indie-pop",
+       "discos": 1,
+       "integrantes": "Alba J., Domingo L."
+    },
+    {
+       "id": 3,
+       "foto": "https://picsum.photos/id/777/350/250",
+       "banda": "Ractzon",
+       "formacion": "2013",
+       "genero": "rock, punk-rock, alternativo",
+       "discos": 2,
+       "integrantes": "Martin X., Lucas Y., Matías Z."
+    }
+]

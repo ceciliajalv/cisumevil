@@ -1,0 +1,174 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+h1 {
+    font-size: 5rem;
+    color: #F40076;
+    -webkit-text-stroke: 2px #533B4D;
+}
+h2 {
+    font-size: 3rem;
+    color: #533B4D;
+}
+h3 {
+    font-size: 2.3rem;
+    color: #533B4D;
+}
+h2.logo {
+    font-size: 2rem;
+    padding: 0rem;
+    color: #F40076;
+}
+header {
+    background-color: #E9E0F5;
+    position: sticky;
+    top: 0rem;
+    height: 4rem;
+    z-index: 100;
+}
+.navbar-bordeaux .navbar-nav .nav-link{
+    color: #533B4D;
+}
+section {
+    padding-left: 1rem;
+    padding-top: 3rem;
+    margin-top: -3rem;
+}
+section#hero {
+    height: 100vh;
+    background-color: #8158FF;
+    background-image: url(../img/concert.jpg);
+    background-size: cover;
+}
+section#aboutUs, section#contrataciones {
+    background-color: #FDD8E9;
+}
+section#servicios, section#contactanos {
+    background-color: #B892FF;
+}
+section#roaster, section#adquirir {
+    background-color: #A41E62;
+}
+#roaster h2, #roaster h3 {
+    color: #FDD8E9;
+}
+section#aboutUs, section#servicios, section#roaster, section#contrataciones {
+    height: 100vh;
+}
+section#contactanos, section#adquirir{
+    height: 130vh;
+}
+
+#hero h3 {
+    color: #533B4D;
+    -webkit-text-stroke: 0.5px #A41E62;
+}
+.roaster-lista, .productos-lista {
+    padding-top: 3rem;
+}
+.roaster-lista img {
+    margin-top: 1rem;
+}
+#aboutUs h4 {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    column-gap: 2rem;
+    padding: 2rem;
+    text-align: justify;
+}
+.formulario fieldset, #contrataciones fieldset {
+    width: 35rem;
+    border: none;
+}
+#muchasGracias {
+    font-size: 1.8rem;
+    color: #A41E62;
+    margin-top: 2rem;
+}
+
+#resTarifa {
+    padding: 9.8rem 3rem 0rem 1rem;
+    font-size: 1.75rem;
+    display: flex;
+    width: 45%;
+    text-align: justify;
+}
+.bodyhome {
+    height: 100vh;
+    overflow-y: hidden;
+    background-image: url(../img/micyluz2.jpg);
+    background-size: cover;
+}
+section#inicio {
+    padding: 0px;
+    bottom: 0px;
+}
+div#hero {
+    height: 79vh;
+}
+.cardW {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+#cisum {
+    font-size: 5rem;
+}
+#bym {
+    font-size: 3rem;
+}
+.selectWeb {
+    background-color: #B892FF;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+div#soyArt, div#soyCont, div#soyFan {
+    padding-left: 2rem;
+    width: 100%;
+    text-align: center;
+}
+div#soyArt {
+    background-color: #8667A6;   
+}
+div#soyArt:hover {
+    background-image: url(../img/secciones/micyluzblue.jpg);
+    background-size: cover;
+    background-position-y: -7.3rem;
+}
+div#soyCont {
+    background-color: #A41E62;
+}
+#soyCont h2{
+    color: #E9E0F5;
+}
+div#soyCont:hover {
+    background-image: url(../img/secciones/micyluzbordo.jpg);
+    background-size: cover;
+    background-position-y: -10.8rem;
+}
+div#soyFan {
+    background-color: #FDD8E9;
+}
+div#soyFan:hover {
+    background-image: url(../img/secciones/micyluzrosa.jpg);
+    background-size: cover;
+    background-position-y: center;
+}
+.secWeb h2 {
+    width: 100%;
+    font-size: 2.5rem;
+}
+#btnArt, #btnCont {
+    display: none;
+}
+.blur {
+    transition: 0.5s;
+}
