@@ -34,6 +34,7 @@ setTimeout(() => {
 }, 2000)
 
 function verDetalle(i) {
+    debugger
    let detalleJSON = contenidoJSON.find(item => item.id == i)
       if (detalleJSON != null) {
          localStorage.setItem("contenido", JSON.stringify(detalleJSON))

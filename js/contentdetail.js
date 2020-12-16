@@ -2,6 +2,7 @@ let HTMLCard = ""
 let informacionDeContenido = ""
 
 $(document).ready(function() {
+    debugger
    if (localStorage.contenido != undefined) {
       informacionDeContenido = JSON.parse(localStorage.contenido)
       HTMLCard = `<h2 class="blur">${informacionDeContenido.banda}</h2>
@@ -22,8 +23,8 @@ $(document).ready(function() {
 })
 
 $(window).ready(function() {
-   $('h1').fadeIn(800, function() {
-      $('h4').fadeIn(500)
+   $('h2').fadeIn(800, function() {
+      $('p').fadeIn(500)
       $('#contenido').slideDown("slow")
    })
 })
