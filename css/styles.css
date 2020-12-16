@@ -57,8 +57,15 @@ section#roaster, section#adquirir {
 section#aboutUs, section#servicios, section#roaster, section#contrataciones, section#infoart {
     height: 100vh;
 }
-section#contactanos, section#adquirir{
+section#contactanos{
     height: 130vh;
+}
+section#adquirir{
+    height: 150vh;
+}
+section#adquirir h2, section#adquirir h4, section#adquirir table, section#adquirir p {
+    margin-left: 1rem;
+    color: #FDD8E9;
 }
 
 #hero h3 {
@@ -179,4 +186,65 @@ div.cardband {
 div.infoband {
     margin: 0rem 2.5rem 0rem 2rem;
     text-align: justify;
+}
+.masinfo {
+    text-align: center;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+a.masinfo {
+    color: #A41E62;
+    text-decoration: #A41E62;
+    text-decoration-line: underline;
+}
+a.masinfo:hover {
+    color: #533B4D;
+    text-decoration: #533B4D;
+    text-decoration-line: underline;
+}
+#loading img {
+    width: 100%;
+    filter: hue-rotate(21deg);
+}
+.productos-lista table td:first-child, .productos-lista table th:first-child {
+    width: 10rem;
+    padding-left: 0.4rem;
+}
+.productos-lista table td:nth-child(2), .productos-lista table th:nth-child(2) {
+    text-align: justify;
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+}
+.productos-lista table td:nth-child(3) {
+    width: 6rem;
+}
+.productos-lista table td:last-child, .productos-lista table th:last-child {
+    padding-right: 0.4rem;
+}
+.productos-lista table {
+    margin-right:1rem ;
+    background-color: rgba(83, 59, 77, 0.2);
+}
+.productos-lista {
+    margin:1rem 1rem 1rem 0rem;
+    padding: 0rem;
+}
+#carritoLista {
+    position: fixed;
+    z-index: 100;
+    top: 7rem;
+    transform: translateX(57rem);
+    width: 23rem;
+    background-color: #E9E0F5;
+    padding: 2rem;
+}
+#carritoLista table td, #carritoLista table th{
+   padding: 0rem 0.5rem;
+}
+#carritoLista table td:first-child, #carritoLista table th:first-child{
+    width: 13rem;
+}
+#carritoLista table td:last-child, #carritoLista table th:last-child{
+    width: 8rem;
+    text-align: right;
 }

@@ -31,15 +31,18 @@ function obtenerShow(vsh) {
 document.getElementById("enviarCont").onclick = tarifa;
 
 function tarifa() {
+    $("#loading").remove(); 
+    $("#contrataciones").append("<div id='loading'><img src='./img/loading-02.gif'></div>");
     $("#resTarifa").remove(); 
     debugger
+    setTimeout(()=>{
+    $("#loading").remove(); 
     if (obtenerArt.vart == "Cuore di belladona")    
     switch (obtenerVen.vven) {
         case "AMBA":
              $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetArs"] * amba* obtenerShow.vsh) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
             break
         case "Buenos Aires (interior), Córdoba o Santa Fé":
-            $("#resTarifa").remove(); 
             $("#contrataciones").append("<h3 id='resTarifa'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetArs"] * alrededores * obtenerShow.vsh) + "ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");          
             break
         case  "Resto de Argentina":
@@ -122,6 +125,7 @@ function tarifa() {
             alert("No seleccionó ninguna zona")
     }
     else alert("No se seleccionó ningún artista")
+    },2500)
 }
 
 $(document.getElementById("QShows")).on('keypress',function(e) {

@@ -12,6 +12,10 @@
         <script defer src="js/objects.js"></script>
         <script defer src="js/gracias.js"></script>
         <script defer src="js/storage.js"></script>
+        <script defer src="js/jsonservicios.js"></script>
+        <script defer src="js/administoservicios.js"></script>
+        <script defer src="js/objetoshoppingcart.js"></script>
+        <script defer src="js/carrito.js"></script>
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" href="./css/styles.css">
     </head>
@@ -42,11 +46,12 @@
                             <a class="nav-link" href="#contactanos">Contacto</a>
                         </li>
                       </ul>
-                      <div id="carrito" class="yellow center div-header">
-                        <h6 id="itemscarrito"><i class="material-icons" onclick="">shopping_cart</i> 0</h6>
+                      <div id="carrito" class="yellow center div-header d-flex flex-row">
+                        <i class="material-icons" onclick="">shopping_cart</i> 
+                        <h6 id="itemscarrito"></h6>
                     </div>
                 </div>
-              </nav>    
+              </nav>
         </header>
         <section id="hero" class="d-flex flex-column justify-content-center align-items-start">
             <h1 class="headSection">Servicios</h1>
@@ -65,7 +70,8 @@
             </div>
         </section>
         <section id="adquirir">
-            <h2>Adquirí nuestros servicios</h2>
+            <h2>Adquirí nuestros servicios profesionales</h2>
+            <h4>Te brindamos todo lo necesario para profesionalizar tu carrera musical y llegar al próximo nivel. ¡Empezá a formar parte de la comunidad de Cisum Evil!*</h4>
             <div class="productos-lista d-flex flex-row justify-content-around">
                 <table>
                     <thead>
@@ -76,38 +82,39 @@
                             <th>Agregar</th>
                         </tr>
                     </thead>
-                    <tbody id="grilladeservicios"> 
+                    <tbody id="grilladeservicios">
                         <!-- reemplazar grilladecursos por grilladeservicios -->
-                        <tr>
-                            <td>CURSO UNO</td>
-                            <td>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</td>
-                            <td>$ 15000</td>
-                            <td><button class="btn" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>    
+                        <!-- <tr>
+                            <td>Sesión fotográfica</td>
+                            <td>¿Necesitás realizar una sesión de fotos para prensa, tu dossier o nuevo album? ¡Nosotros te podemos ayudar! El servicio incluye 2 sesiones fotográficas de 2hs, 1 sesión de brainstorming pre-encuentro y el revelado de 20 fotos. (Servicio disponible solo para el territorio del AMBA)</td>
+                            <td>$ 8000</td>
+                            <td><button class="btn" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>
                         </tr>
                         <tr>
-                            <td>CURSO DOS</td>
-                            <td>I am a very simple card. I am good at containing small bits of information. <br>
-                                I am convenient because I require little markup to use effectively.</td>
+                            <td>Servicios de prensa</td>
+                            <td>¿Estás por lanzar tu próximo single o album? ¿Se viene una fecha importantísima en tu carrera? Te ofrecemos 1 mes de nuestros servicios de prensa y comunicación para que tu proyecto llegue a los medios. (Disponible para todo el territorio argentino)</td>
                             <td>$ 15000</td>
-                            <td><button class="btn" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>    
+                            <td><button class="btn" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>
                         </tr>
                         <tr>
-                            <td>CURSO WEB</td>
-                            <td>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</td>
-                            <td>$ 15000</td>
-                            <td><button class="btn" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>    
+                            <td>Cobertura show en vivo</td>
+                            <td>Cubrimos tu show con calidad profesional para que obtengas el mejor contenido para tu EPK, redes o lo que necesites. Este servicio te incluye grabación a 3 cámaras, postproducción y montaje del show completo + 3 sneak peaks/trailers de 1 minuto para redes sociales o 1 EPK. (Servicio disponible en Buenos Aires, CABA y algunas zonas** de Santa Fe y Córdoba)</td>
+                            <td>$ 45000</td>
+                            <td><button class="btn" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>
                         </tr>
                         <tr>
-                            <td>BACKENDER</td>
-                            <td>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</td>
-                            <td>$ 15000</td>
-                            <td><button class="btn yellow black-text waves-effect waves-black" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>    
-                        </tr>
+                            <td>Asesoría profesional</td>
+                            <td>¿Recién estás empezando en la industria y tenés muchas dudas? ¿Llevás años trabajando en la música y querés avanzar pero no sabés cuál podría ser el siguiente paso? Estamos acá para ayudarte. Sacate todas estas dudas y más con nuestro staff especializado. Este servicio consta de 4 videollamadas de 1h a los largo de un mes donde te asesoraremos sobre tus consultas sobre social media, registro, prensa, difusión, giras, contratos, entre otras áreas. Al finalizar cada sesión recibirás un e-mail con todo lo charlado y el plan de acción. (Disponible para todo el territorio latinoamericano***)</td>
+                            <td>$ 6000</td>
+                            <td><button class="btn yellow black-text waves-effect waves-black" onclick=""><i class='material-icons'>add_shopping_cart</i></button></td>
+                        </tr> -->
                     </tbody>
                 </table>
+            </div>
+            <div>
+                <p>*Adquiriendo cualquiera de nuestros servicios serás agregado a nuestras playlist de Spotify para que todos nuestros seguidores puedan conocer tu música.
+                <br> **Por favor, si sos de Santa Fe o Córdoba comunicate con nosotros por e-mail o formulario de contacto primero para consultar disponibilidad.
+                <br> ***Asesoría sobre registro y legales solo disponible en Argentina.</p>
             </div>
         </section>
         <section id="contrataciones" class="d-flex flex-row">
@@ -117,18 +124,18 @@
             <fieldset class="d-flex flex-column">
                 <label for="opcion_artistas">Artista</label>
                 <select name="opcion_artistas" id="opcion_artistas">
-                </select>   
+                </select>
                 <label for="opcion_venue">Zona del evento</label>
                 <select name="opcion_venue" id="opcion_venue">
-                </select> 
+                </select>
                 <label for="opcion_tipo">Tipo de evento</label>
                 <select name="opcion_tipo" id="opcion_tipo"> </select>
                 <label for="QShows">Cantidad de shows</label>
-                <input type="text" name="QShows" id="QShows" placeholder="#">   
+                <input type="text" name="QShows" id="QShows" placeholder="#">
                 <div>
                     <input type="checkbox" name="transporte" id="transporte" class="check"> El contratante se encargará del transporte
-                </div>  
-                <input type="submit" name="enviar" value="Enviar" id="enviarCont">          
+                </div>
+                <input type="submit" name="enviar" value="Enviar" id="enviarCont">
             </fieldset>
             </div>
         </section>
@@ -142,27 +149,55 @@
                     <input type="text" name="lastName" id="lastName" placeholder="Tu Apellido" class="campoForm">
                     <div>
                         <input type="checkbox" name="empresa" value="si" class="check" class="campoForm">Me contacto en representación de una empresa u organización
-                    </div>  
+                    </div>
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="Tu correo electronico" class="campoForm"> 
+                    <input type="email" name="email" id="email" placeholder="Tu correo electronico" class="campoForm">
                     <label for="opcion_contacto">Motivo de contacto</label>
                     <select name="opcion_contacto" id="opcion_contacto" class="campoForm">
                         <option>Representación</option>
-                        <option>Contrataciones</option>                  
+                        <option>Contrataciones</option>
                         <option>Prensa</option>
-                        <option>Tour</option>             
+                        <option>Tour</option>
                         <option>Otros</option>
-                    </select>             
+                    </select>
                     <div>
                         <input type="checkbox" name="newsletter" value="si" class="check" class="campoForm">Deseo suscribirme al newsletter
-                    </div>      
+                    </div>
                     <label for="asunto">Asunto</label>
-                    <input type="text" name="asunto" id="asunto" placeholder="Breve descripción del mensaje" class="campoForm"> 
-                    <textarea name="mensaje" cols="25" rows="10" placeholder="Mensaje"></textarea> 
-                    <input type="submit" name="enviar" onclick="gracias ()" value="Enviar">    
+                    <input type="text" name="asunto" id="asunto" placeholder="Breve descripción del mensaje" class="campoForm">
+                    <textarea name="mensaje" cols="25" rows="10" placeholder="Mensaje"></textarea>
+                    <input type="submit" name="enviar" onclick="gracias ()" value="Enviar">
                 </fieldset>
                 <h3 id="muchasGracias"></h3>
             </form>
+        </section>
+        <section id="carritoLista" class="d-none">
+            <table class="responsive-table highlight">
+                <thead class="black white-text">
+                    <tr>
+                        <th>Servicio</th>
+                        <th class="right">Importe</th>
+                    </tr>
+                </thead>
+                <tbody id="checkout">
+                    <!-- <tr>
+                        <td>Sesión fotográfica</td>
+                        <td class="right">8000</td>
+                    </tr>
+                    <tr>
+                        <td>Asesoría profesional</td>
+                        <td class="right">6000</td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <table>
+                <tbody class="grey lighten-4 black-text" id="totales">
+                    <!-- <tr>
+                        <td>TOTAL</td>
+                        <td class="right">14000</td>
+                    </tr> -->
+                </tbody>
+            </table>
         </section>
     <script src="js/bootstrap/jquery-3.2.1.slim.min.js"></script>
     <script src="js/bootstrap/popper.min.js"></script>
