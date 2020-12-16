@@ -10,9 +10,9 @@ function cargarRoaster() {
          contenidoJSON = response
          $.each(contenidoJSON, function(i) {
             HTMLCard += `<div class="d-flex flex-column">
-            <h3>${contenido[i].banda}</h3>
-            <img src="${contenido[i].foto}" alt="">
-            <button onclick="verDetalle(${contenido[i].id})">Ver más</button>
+            <h3>${contenidoJSON[i].banda}</h3>
+            <img src="${contenidoJSON[i].foto}" alt="">
+            <button onclick="verDetalle(${contenidoJSON[i].id})">Ver más</button>
             </div>`
          })
          $("#contenido").html(HTMLCard)
