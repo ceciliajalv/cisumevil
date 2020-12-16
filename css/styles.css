@@ -45,7 +45,7 @@ section#hero {
 section#aboutUs, section#contrataciones {
     background-color: #FDD8E9;
 }
-section#servicios, section#contactanos {
+section#servicios, section#contactanos, section#infoart {
     background-color: #B892FF;
 }
 section#roaster, section#adquirir {
@@ -54,7 +54,7 @@ section#roaster, section#adquirir {
 #roaster h2, #roaster h3 {
     color: #FDD8E9;
 }
-section#aboutUs, section#servicios, section#roaster, section#contrataciones {
+section#aboutUs, section#servicios, section#roaster, section#contrataciones, section#infoart {
     height: 100vh;
 }
 section#contactanos, section#adquirir{
@@ -171,4 +171,12 @@ div#soyFan:hover {
 }
 .blur {
     transition: 0.5s;
+}
+div.cardband {
+    margin-top: 2.5rem;
+    margin-left:1.5rem ;
+}
+div.infoband {
+    margin: 0rem 2.5rem 0rem 2rem;
+    text-align: justify;
 }
