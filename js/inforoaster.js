@@ -2,7 +2,6 @@ let HTMLCard = "";
 let contenidoJSON = []
 
 function cargarRoaster() {
-    debugger
    $.ajax({
       url: "js/bandas.json",
       dataType: "json",
