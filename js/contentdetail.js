@@ -19,22 +19,6 @@ $(document).ready(function() {
           </div>
       </div>`
    }
-   else {
-    informacionDeContenido = JSON.parse(localStorage.contenido)
-    HTMLCard = `<h2 class="blur">${informacionDeContenido.banda}</h2>
-    <div class="d-flex flex-row cardband">
-        <div>
-            <img src="${informacionDeContenido.fotom}" alt="">
-        </div>
-        <div class="d-flex flex-column infoband">
-            <p>Año de formación: ${informacionDeContenido.formacion}</p>
-            <p>Géneros: ${informacionDeContenido.genero} </p>
-            <p>Albumes lanzados: ${informacionDeContenido.discos}</p>
-            <p>Miembros oficiales: ${informacionDeContenido.integrantes}</p>
-            <p>Breve historia sobre el artista: ${informacionDeContenido.descripcion}</p>
-        </div>
-    </div>`
- }
    $('#contenido').html(HTMLCard)
 })
 
