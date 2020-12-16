@@ -41,6 +41,5 @@ function agregarServicio(servid) {
         if (existe == false) {
             carrito.push(servid)
             alert("Se ha agregado el servicio a tu carrito.")
-
         }
 }
