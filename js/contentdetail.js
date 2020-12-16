@@ -5,7 +5,7 @@ let informacionDeContenido = ""
 $(document).ready(function() {
    if (localStorage.contenido != undefined) {
       informacionDeContenido = JSON.parse(localStorage.contenido)
-      HTMLCanvasElement = `<h2 class="blur">${informacionDeContenido.banda}</h2>
+      HTMLCard = `<h2 class="blur">${informacionDeContenido.banda}</h2>
       <div class="d-flex flex-row cardband">
           <div>
               <img src="${informacionDeContenido.fotom}" alt="">
