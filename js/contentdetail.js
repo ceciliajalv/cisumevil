@@ -1,5 +1,4 @@
-let HTMLTable = ""
-let HTMLtrailer = ""
+let HTMLCard = ""
 let informacionDeContenido = ""
 
 $(document).ready(function() {
