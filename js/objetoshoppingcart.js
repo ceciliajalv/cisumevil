@@ -1,4 +1,4 @@
-class carritoLista {
+class carritolista {
     constructor(carrito, servicios) {
         var total = 0
         this.carrito = carrito

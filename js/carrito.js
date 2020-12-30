@@ -3,14 +3,14 @@ function muestroCheckout () {
         alert("Su carrito se encuentra vacío")
     } 
     else {
-        changuito = new carritoLista(carrito, servicios)
+        changuito = new carritolista(carrito, servicios)
         changuito.verCompra(checkout)
         changuito.verTotales(totales)
-        carritoLista.classList.remove('d-none')    
+        carritolista.classList.remove('d-none')    
         servicios.classList.add('d-none') 
     }
 }
 
 function cerrar() {
-    carritoLista.classList.add('d-none')
+    carritolista.classList.add('d-none')
 }

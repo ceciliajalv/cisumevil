@@ -1,5 +1,5 @@
 let HTMLCard = ""
-let informacionDeContenido = ""
+let informacionDeContenido = []
 
 $(document).ready(function() {
     debugger
@@ -19,7 +19,7 @@ $(document).ready(function() {
           </div>
       </div>`
    }
-   $('#contenido').html(HTMLCard)
+   $('#infoart').html(HTMLCard)
 })
 
 $(window).ready(function() {

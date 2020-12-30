@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cisum-Evil | Sitio oficial</title>
         <link rel="icon" type="image/png" href="./img/logo.png" sizes="64x64">
+        <script src="js/JQuery-3.5.1.min.js"></script>
         <script defer src="js/main.js"></script>
         <script defer src="js/json.js"></script>
         <script defer src="js/objects.js"></script>
         <script defer src="js/gracias.js"></script>
         <script defer src="js/storage.js"></script>
-        <script src="js/JQuery-3.5.1.min.js"></script>
         <script defer src="js/inforoaster.js"></script>
         <!-- <script defer src="js/animaciones.js"></script> -->
         <link rel="stylesheet" href="./css/bootstrap.css">
@@ -68,7 +68,7 @@
             </div>
         </section>
         <section id="roaster">
-            <h2>Nuestros Artistas</h2>
+            <h2 id="NA">Nuestros Artistas</h2>
             <div id="contenido" class="roaster-lista d-flex flex-row justify-content-around"></div>
         </section>
         <section id="contrataciones" class="d-flex flex-row">
@@ -85,7 +85,7 @@
                 <label for="opcion_tipo">Tipo de evento</label>
                 <select name="opcion_tipo" id="opcion_tipo"> </select>
                 <label for="QShows">Cantidad de shows</label>
-                <input type="text" name="QShows" id="QShows" placeholder="#">   
+                <input type="text" name="QShows" id="QShows" placeholder="#">
                 <div>
                     <input type="checkbox" name="transporte" id="transporte" class="check"> El contratante se encargará del transporte
                 </div>  

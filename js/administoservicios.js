@@ -1,5 +1,6 @@
 var carrito = []
 var changuito = ""
+var servicios = []
 var adquirir = document.getElementById("adquirir")
 var grilladeservicios = document.getElementById("grilladeservicios")
 var carritolista = document.getElementById("carritolista")

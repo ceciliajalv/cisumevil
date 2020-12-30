@@ -1,5 +1,5 @@
  function opcion_artistas() {
-    var artistas = ["Seleccione el artista de su interés", "Cuore di belladona", "Ractzon", "Dawn to midday"];
+    var artistas = ["Seleccione el artista de su interés", "Cuore di Belladona", "Ractzon", "Dawn to midday"];
     var selectArtist = document.getElementById('opcion_artistas');
     
     for(var i=0; i < artistas.length; i++){ 
