@@ -7,14 +7,34 @@ h1 {
     font-size: 5rem;
     color: #F40076;
     -webkit-text-stroke: 2px #533B4D;
+    font-family: 'Bungee Inline', cursive;
 }
 h2 {
     font-size: 3rem;
     color: #533B4D;
+    font-family: 'Bungee Inline', cursive;
 }
 h3 {
     font-size: 2.3rem;
     color: #533B4D;
+    font-family: 'Lobster', cursive;
+}
+h4 {
+    font-family: 'Lobster', cursive;
+}
+p {
+    font-family: 'Lobster', cursive;
+}
+button {
+    font-family: 'Lobster', cursive;
+}
+a {
+    font-family: 'Lobster', cursive;
+}
+li a { 
+    font-size: 1.4rem;
+    margin-top: -0.4rem;
+    color: grey;
 }
 h2.logo {
     font-size: 2rem;
@@ -28,13 +48,16 @@ header {
     height: 4rem;
     z-index: 100;
 }
-.navbar-bordeaux .navbar-nav .nav-link{
+.navbar-bordeaux, .navbar-nav, .nav-link{
     color: #533B4D;
+}
+.nav-link:hover, .navbar-bordeaux:hover, .navbar-nav:hover, .nav-item:hover{ 
+    color: #F40076;
 }
 section {
     padding-left: 1rem;
-    padding-top: 3rem;
-    margin-top: -3rem;
+    padding-top: 6rem;
+    margin-top: 0rem;
 }
 section#hero {
     height: 100vh;
@@ -97,8 +120,8 @@ section#adquirir h2, section#adquirir h4, section#adquirir table, section#adquir
 }
 
 #resTarifa {
-    padding: 9.8rem 3rem 0rem 1rem;
-    font-size: 1.75rem;
+    padding: 7rem 3rem 0rem 1rem;
+    font-size: 1.7rem;
     display: flex;
     width: 45%;
     text-align: justify;
@@ -114,7 +137,7 @@ section#inicio {
     bottom: 0px;
 }
 div#hero {
-    height: 79vh;
+    height: 73vh;
 }
 .cardW {
     background-color: rgba(255, 255, 255, 0.5);
@@ -178,6 +201,9 @@ div#soyFan:hover {
 }
 .blur {
     transition: 0.5s;
+}
+.titulo {
+    margin-top: -2.5rem;  
 }
 div.cardband {
     margin-top: 2.5rem;

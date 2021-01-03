@@ -11,13 +11,15 @@ var rm = 3
 var idArtista = []
 var idTipo = []
 var idZona = []
+var logZona = []
 var idQ = []
 var idTransporte = []
 var tipoEvento = []
 var descuento = []
-var traslado = []
+var transporte = []
 var shows = document.getElementById("QShows").value;
 var tipos = document.getElementById("opcion_tipo").value;
+var viaje = []
 
 document.getElementById("opcion_tipo").onchange = obtenerTipo;
 function obtenerTipo(vtipo){
@@ -39,45 +41,6 @@ function obtenerTipo(vtipo){
             tipoEvento = 1;
             break
     }
-    switch (shows){
-    case "1":
-    switch (obtenerTipo.vtipo) {
-        case "Evento privado (fiestas, actos corporativos, etc)":
-            idTipo = "evento privado";
-            break
-        case "Evento pago (con venta de entradas)":
-            idTipo = "evento pago";
-            break
-        case "Evento público (de entrada gratuita o benéfico)":
-            idTipo = "evento público";
-            break
-        case "Seleccione el tipo de evento":
-            idTipo = "evento";
-            break
-        default:
-            idTipo = "evento";
-            break
-    }
-    }
-    default {
-    switch (obtenerTipo.vtipo) {
-        case "Evento privado (fiestas, actos corporativos, etc)":
-            idTipo = "eventos privados";
-            break
-        case "Evento pago (con venta de entradas)":
-            idTipo = "eventos pagos";
-            break
-        case "Evento público (de entrada gratuita o benéfico)":
-            idTipo = "eventos públicos";
-            break
-        case "Seleccione el tipo de evento":
-            idTipo = "eventos";
-            break
-        default:
-            idTipo = "eventos";
-            break
-    }
-    }
 }
 document.getElementById("opcion_artistas").onchange = obtenerArt;
 function obtenerArt(vart){
@@ -90,6 +53,36 @@ document.getElementById("opcion_venue").onchange = obtenerVen;
 function obtenerVen(vven) {
     var ven = document.getElementById("opcion_venue").value;
     obtenerVen.vven = ven
+    idZona = obtenerVen.vven
+    switch (idZona) {
+        case "AMBA":
+           qZona = 100
+           break
+       case "Buenos Aires (interior), Córdoba o Santa Fé":
+            qZona = 1500        
+           break
+       case  "Resto de Argentina":
+           qZona = 6000 
+           break
+       case "Países limítrofes":
+           qZona = 200
+           break
+       case  "Resto de Sudamérica":
+           qZona = 450 
+           break
+       case "Centroamérica, norteamérica y Caribe":
+           qZona = 900
+           break
+       case "Europa":
+           qZona = 1100
+           break
+       case "Resto del mundo":
+           qZona = 1500
+           break
+       default:
+           idTransporte = "con transporte a cargo del contratante "
+    }
+
 }
 
 document.getElementById("QShows").onchange = obtenerShow;
@@ -124,8 +117,62 @@ function obtenerShow(vsh) {
              descuento = 0.6;
              break
     }
+    switch (shows){
+        case "1": {
+        switch (obtenerTipo.vtipo) {
+            case "Evento privado (fiestas, actos corporativos, etc)":
+                idTipo = "evento privado";
+                break
+            case "Evento pago (con venta de entradas)":
+                idTipo = "evento pago";
+                break
+            case "Evento público (de entrada gratuita o benéfico)":
+                idTipo = "evento público";
+                break
+            case "Seleccione el tipo de evento":
+                idTipo = "evento";
+                break
+            default:
+                idTipo = "evento";
+                break
+        }
+        break
+        }
+        default: {
+        switch (obtenerTipo.vtipo) {
+            case "Evento privado (fiestas, actos corporativos, etc)":
+                idTipo = "eventos privados";
+                break
+            case "Evento pago (con venta de entradas)":
+                idTipo = "eventos pagos";
+                break
+            case "Evento público (de entrada gratuita o benéfico)":
+                idTipo = "eventos públicos";
+                break
+            case "Seleccione el tipo de evento":
+                idTipo = "eventos";
+                break
+            default:
+                idTipo = "eventos";
+                break
+        }
+        break
+        }
+        }
 }
 
+// document.getElementById("transporte").onchange = transporte;
+
+// function transporte () {
+
+// }
+// document.getElementById("transporte").onblur = transporte();
+// function transporte (){
+//     var opViaje = document.getElementById("transporte").checked;
+//     if (transporte.opViaje == false)
+//     alert ("no esta marcado") 
+//     else  alert ("esta marcado")
+// }
 
 document.getElementById("enviarCont").onclick = tarifa;
 
@@ -133,6 +180,25 @@ function tarifa() {
     $("#loading").remove(); 
     $("#contrataciones").append("<div id='loading'><img src='./img/loading-02.gif'></div>");
     $("#resTarifa").remove(); 
+    var opViaje = document.getElementById("transporte").checked;
+    if (opViaje == false) {
+        idTransporte = ", con transporte incluido, "
+        switch (idArtista) {
+            case "Cuore di Belladona":
+               transporte = (jsonCDB["miembros"] + jsonCDB["crew"])*qZona
+               break
+            case "Ractzon" : 
+                transporte = (jsonRAC["miembros"] + jsonRAC["crew"])*qZona
+                break
+            case "Dawn to midday" : 
+                transporte = (jsonDTM["miembros"] + jsonDTM["crew"])*qZona
+            break 
+        }
+    }
+    else  {
+        transporte = 0
+        idTransporte = ", con transporte a cargo del contratante, "
+    }
     debugger
     setTimeout(()=>{
     $("#loading").remove(); 
@@ -145,28 +211,28 @@ function tarifa() {
     if (obtenerArt.vart == "Cuore di Belladona")    
     switch (obtenerVen.vven) {
         case "AMBA":
-             $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetArs"] * amba* tipoEvento* obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+             $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetArs"] * amba* tipoEvento* obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Buenos Aires (interior), Córdoba o Santa Fé":
-            $("#contrataciones").append("<h3 id='resTarifa'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetArs"] * alrededores *  tipoEvento * obtenerShow.vsh * descuento) + "ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");          
+            $("#contrataciones").append("<h3 id='resTarifa'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetArs"] * alrededores *  tipoEvento * obtenerShow.vsh * descuento)) + "ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");          
             break
         case  "Resto de Argentina":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetArs"] * arg *  tipoEvento * obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetArs"] * arg *  tipoEvento * obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Países limítrofes":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetUsd"] * limit *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetUsd"] * limit *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case  "Resto de Sudamérica":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetUsd"] * sa *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetUsd"] * sa *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Centroamérica, norteamérica y Caribe":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetUsd"] * na *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetUsd"] * na *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Europa":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetUsd"] * eu *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetUsd"] * eu *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Resto del mundo":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonCDB["cachetUsd"] * rm *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonCDB["cachetUsd"] * rm *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         default:
             alert("No seleccionó ninguna zona")
@@ -174,28 +240,28 @@ function tarifa() {
     else if (obtenerArt.vart  == "Ractzon")
     switch (obtenerVen.vven) {
         case "AMBA":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonRAC["cachetArs"] * amba *  tipoEvento * obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'> La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonRAC["cachetArs"] * amba *  tipoEvento * obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Buenos Aires (interior), Córdoba o Santa Fé":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonRAC["cachetArs"] * alrededores *  tipoEvento * obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonRAC["cachetArs"] * alrededores *  tipoEvento * obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case  "Resto de Argentina":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonRAC["cachetArs"] * arg *  tipoEvento * obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonRAC["cachetArs"] * arg *  tipoEvento * obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Países limítrofes":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonRAC["cachetUsd"] * limit *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonRAC["cachetUsd"] * limit *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case  "Resto de Sudamérica":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonRAC["cachetUsd"] * sa *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonRAC["cachetUsd"] * sa *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Centroamérica, norteamérica y Caribe":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonRAC["cachetUsd"] * na *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonRAC["cachetUsd"] * na *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Europa":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + ( jsonRAC["cachetUsd"] * eu *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + ( jsonRAC["cachetUsd"] * eu *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Resto del mundo":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonRAC["cachetUsd"] * rm *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonRAC["cachetUsd"] * rm *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         default:
             alert("No seleccionó ninguna zona")
@@ -203,28 +269,28 @@ function tarifa() {
     else if (obtenerArt.vart == "Dawn to midday")
     switch (obtenerVen.vven) {
         case "AMBA":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetArs"] * amba *  tipoEvento * obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetArs"] * amba *  tipoEvento * obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Buenos Aires (interior), Córdoba o Santa Fé":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetArs"] * alrededores *  tipoEvento * obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetArs"] * alrededores *  tipoEvento * obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case  "Resto de Argentina":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetArs"] * arg *  tipoEvento * obtenerShow.vsh * descuento) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetArs"] * arg *  tipoEvento * obtenerShow.vsh * descuento)) +"ars. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Países limítrofes":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetUsd"] * limit *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetUsd"] * limit *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case  "Resto de Sudamérica":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetUsd"] * sa *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetUsd"] * sa *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Centroamérica, norteamérica y Caribe":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetUsd"] * na *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetUsd"] * na *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Europa":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetUsd"] * eu *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetUsd"] * eu *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         case "Resto del mundo":
-            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa para la zona, artista y cantidad de shows seleccionados es de " + (jsonDTM["cachetUsd"] * rm *  tipoEvento * obtenerShow.vsh * descuento) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato</h3>");
+            $("#contrataciones").append("<h3 id='resTarifa' class='col-md-6'>La tarifa de " + idArtista + " para " + shows + " " + idTipo + " en " + idZona + idTransporte + " es de " + (transporte + (jsonDTM["cachetUsd"] * rm *  tipoEvento * obtenerShow.vsh * descuento)) +"USD. Recuerde que estas tarifas son de referencia y el precio final se definirá al momento de firmar el contrato. <br> Para comenzar con la contratación le solicitamos llenar nuestro formulario de contacto con su consulta.</h3>");
             break
         default:
             alert("No seleccionó ninguna zona")
