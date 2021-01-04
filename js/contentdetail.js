@@ -2,7 +2,6 @@ let HTMLCard = ""
 let informacionDeContenido = []
 
 $(document).ready(function() {
-    debugger
    if (localStorage.contenido != undefined) {
       informacionDeContenido = JSON.parse(localStorage.contenido)
       HTMLCard = `<h2 class="blur">${informacionDeContenido.banda}</h2>

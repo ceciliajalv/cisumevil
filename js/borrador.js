@@ -3,7 +3,6 @@ d.body.onload = function() {
 } 
 
 function guardoCampo(campo) {
-    debugger
     if (campo.value.trim() !== '')
         ls.setItem(campo.id, campo.value)
 }
@@ -35,12 +34,10 @@ function confirmoDatos() {
  }
  
  document.addEventListener("DOMContentLoaded", confirmoDatos)
- debugger
 ls.clear();
 var campo = d.getElementsByClassName("campoForm").onblur = guardoCampo;
 
 function guardoCampo(campo) {
-    debugger
     if (campo.value !== '')
         ls.setItem(campo.id, campo.value)
 }
@@ -49,7 +46,6 @@ function guardoCampo(campo) {
 //ls.setItem(clave, info)
 
 //var clave = d.getElementsByClassName() ;
-//debugger
 //d.getElementById("name").onblur = guardoCampo;
 
 //function guardoCampo () 
@@ -124,7 +120,6 @@ function guardoCampo(campo) {
     document.getElementById("QShows").onchange = obtenerShow;
     function obtenerShow(vsh) {
         var show = document.getElementById("QShows").value;
-        debugger
         obtenerShow.vsh = show
         switch (obtenerShow.vsh) {
              case 1:
@@ -160,7 +155,6 @@ function guardoCampo(campo) {
         $("#loading").remove(); 
         $("#contrataciones").append("<div id='loading'><img src='./img/loading-02.gif'></div>");
         $("#resTarifa").remove(); 
-        debugger
         setTimeout(()=>{
         $("#loading").remove(); 
         if (obtenerArt.vart == "Cuore di Belladona")    

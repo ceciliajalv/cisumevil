@@ -1,26 +1,26 @@
 let SERVICIOS = [
     {
         "servid": 1,
-        "servicio": "Sesion fotográfica",
-        "descripcion": "¿Necesitás realizar una sesión de fotos para prensa, tu dossier o nuevo album? ¡Nosotros te podemos ayudar! El servicio incluye 2 sesiones fotográficas de 2hs, 1 sesión de brainstorming pre-encuentro y el revelado de 20 fotos. (Servicio disponible solo para el territorio del AMBA)" ,
-        "precio": 8000
+        "servicio": "Logística para espectáculos",
+        "descripcion": "¿Necesita ayuda en la logística de su evento? Estamos para ayudarlo. Colaboramos con la producción de su evento, traslado de artistas, agenda, coordinación de vips o lo que necesite. (Servicio no disponible para eventos pagos ni para todas las venues)" ,
+        "precio": "Consultar"
     },
     {
         "servid": 2,
         "servicio": "Servicios de prensa",
-        "descripcion": "¿Estás por lanzar tu próximo single o album? ¿Se viene una fecha importantísima en tu carrera? Te ofrecemos 1 mes de nuestros servicios de prensa y comunicación para que tu proyecto llegue a los medios. (Disponible para todo el territorio argentino)" ,
-        "precio": 15000
+        "descripcion": "Creamos en conjunto con usted el plan de comunicación del evento. Lo ayudamos con la prensa, redes y publicidad de su evento para darle mayor visibilidad. El precio no incluye los valores de los medios pagos y corresponde a cada mes de trabajo. (Servicio disponible para todo el territorio argentino)" ,
+        "precio": "$20000"
     },
     {
         "servid": 3,
         "servicio":"Cobertura show en vivo",
-        "descripcion": "Cubrimos tu show con calidad profesional para que obtengas el mejor contenido para tu EPK, redes o lo que necesites. Este servicio te incluye grabación a 3 cámaras, postproducción y montaje del show completo + 3 sneak peaks/trailers de 1 minuto para redes sociales o 1 EPK. (Servicio disponible en Buenos Aires, CABA y algunas zonas** de Santa Fe y Córdoba)" ,
-        "precio": 45000
+        "descripcion": "Realizamos la cobertura audiovisual de su evento con calidad profesional para que obtenga el mejor contenido para sus redes, video corporativo o lo que necesite. Este servicio incluye grabación a 3 cámaras de los espectáculos en vivo y a 4 cámaras el resto del evento (backstage, ingreso de invitados, público), la postproducción y montaje del show completo + 3 sneak peaks/trailers publicitarios de 1 minuto para redes sociales o 1 video aftermovie de 10 minutos o menos. (Servicio disponible en Buenos Airesz, CABA, Santa Fe y Córdoba)" ,
+        "precio": "$45000"
     },
     {
         "servid": 4,
-        "servicio": "Asesoría profesional",
-        "descripcion": "¿Recién estás empezando en la industria y tenés muchas dudas? ¿Llevás años trabajando en la música y querés avanzar pero no sabés cuál podría ser el siguiente paso? Estamos acá para ayudarte. Sacate todas estas dudas y más con nuestro staff especializado. Este servicio consta de 4 videollamadas de 1h a los largo de un mes donde te asesoraremos sobre tus consultas sobre social media, registro, prensa, difusión, giras, contratos, entre otras áreas. Al finalizar cada sesión recibirás un e-mail con todo lo charlado y el plan de acción. (Disponible para todo el territorio latinoamericano***)" ,
-        "precio": 6000
+        "servicio": "Asesoría para selección de artistas",
+        "descripcion": "¿Está pensando en contratar a uno o varios de nuestros artistas pero no sabe cuál se adapta más a su evento o público? Lo asesoramos con todas las consultas que tenga y le recomendamos lo que nuestra experiencia nos indica que sería mejor para usted. En caso de completar la contratación del artista, accederá a un descuento de un 10% sobre la tarifa del espectáculo. (Servicio disponible en todo el mundo. El precio está expresado en pesos argentinos)" ,
+        "precio": "$6000"
     }
 ]

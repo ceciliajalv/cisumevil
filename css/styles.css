@@ -22,7 +22,37 @@ h3 {
 h4 {
     font-family: 'Lobster', cursive;
 }
-p {
+p, label, div.checkbox {
+    font-family: 'Lobster', cursive;
+    font-size: 1.2rem;
+}
+input, select {
+    font-family: 'Lobster', cursive;
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    border-bottom: purple solid 1px;
+    color: grey;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+}
+input:focus, select:focus {
+    font-family: 'Lobster', cursive;
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: black solid 1.5px;
+    color: purple;
+}
+input#enviarCont {
+    border: black solid 1px;
+    background-color: white;
+}
+th {
+    font-family: 'Bungee Inline', cursive;
+}
+td {
     font-family: 'Lobster', cursive;
 }
 button {
@@ -77,8 +107,11 @@ section#roaster, section#adquirir {
 #roaster h2, #roaster h3 {
     color: #FDD8E9;
 }
-section#aboutUs, section#servicios, section#roaster, section#contrataciones, section#infoart {
+section#aboutUs, section#roaster, section#contrataciones, section#infoart {
     height: 100vh;
+}
+section#servicios {
+    height: 120vh;
 }
 section#contactanos{
     height: 130vh;
@@ -203,7 +236,7 @@ div#soyFan:hover {
     transition: 0.5s;
 }
 .titulo {
-    margin-top: -2.5rem;  
+    margin-top: -2rem;  
 }
 div.cardband {
     margin-top: 2.5rem;

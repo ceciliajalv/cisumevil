@@ -15,6 +15,8 @@
         <script defer src="js/gracias.js"></script>
         <script defer src="js/storage.js"></script>
         <script defer src="js/inforoaster.js"></script>
+        <script defer src="js/jsonservicios.js"></script>
+        <script defer src="js/administoservicios.js"></script>
         <!-- <script defer src="js/animaciones.js"></script> -->
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" href="./css/styles.css">
@@ -58,7 +60,34 @@
             <h4 class="blur">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quos perspiciatis autem. Vero totam, harum exercitationem animi eius voluptates quia excepturi ipsam, deserunt sed nesciunt, incidunt aliquid mollitia ut officia cumque itaque architecto doloribus quos fugiat magni odit dicta voluptate? Voluptatibus officiis molestias odio assumenda quidem asperiores quibusdam? Reiciendis consequuntur nostrum perspiciatis deleniti excepturi esse commodi minus impedit dolorum libero, nam totam eum, sed voluptate quasi beatae nobis veritatis eos. Nobis quasi molestias explicabo sint impedit labore mollitia molestiae pariatur?</h4>
         </section>
         <section id="servicios">
-            <h2 class="blur titulo">Servicios</h2>
+            <div id="adquirir">
+                <h2>Adquiera nuestros servicios profesionales</h2>
+                <div class="productos-lista d-flex flex-row justify-content-around">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="grilladeservicios">
+                    </tbody>
+                </table>
+                </div>
+            <div>
+                <p>*Adquiriendo cualquiera de nuestros servicios serás agregado a nuestras playlist de Spotify para que todos nuestros seguidores puedan conocer tu música.
+                <br> **Por favor, si sos de Santa Fe o Córdoba comunicate con nosotros por e-mail o formulario de contacto primero para consultar disponibilidad.
+                <br> ***Asesoría sobre registro y legales solo disponible en Argentina.</p>
+                <div class="d-flex flex-row">
+                    <button onclick="volverserv()">Volver</button>
+                    <a href="#contactanos"><button> Contactate por estos servicios</button></a>
+                </div>
+            </div>
+            </div>
+            <h2 class="blur titulo" id="NAserv">Servicios</h2>
+            <div id="boxserv">
+            <div class="boxservicios d-flex flex-column align-items-center">
             <div class="blur servicios-lista d-flex flex-row justify-content-around">
                 <div class="servicios-caja d-flex flex-column p-5">
                     <h3>Management</h3>
@@ -68,6 +97,13 @@
                     <h3>Booking</h3>
                     <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, aut reprehenderit laborum exercitationem neque sunt voluptas, necessitatibus eos iste quidem praesentium laboriosam deserunt rerum impedit!</h4>
                 </div>
+            </div>
+            <div class="servicios-caja d-flex flex-column p-5 divserviciosprof align-contet-center col-md-8 ">
+                <h3>Servicios profesionales</h3>
+                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, aut reprehenderit laborum exercitationem neque sunt voluptas, necessitatibus eos iste quidem praesentium laboriosam deserunt rerum impedit!</h4>
+                <button id="btnserv" onclick="ocultoServicios ()"> Ver servicios profesionales </button>
+            </div>
+            </div>
             </div>
         </section>
         <section id="roaster">
@@ -89,7 +125,7 @@
                 <select name="opcion_tipo" id="opcion_tipo"> </select>
                 <label for="QShows">Cantidad de shows</label>
                 <input type="text" name="QShows" id="QShows" placeholder="#">
-                <div>
+                <div class="checkbox">
                     <input type="checkbox" name="transporte" id="transporte" class="check"> El contratante se encargará del transporte
                 </div>  
                 <input type="submit" name="enviar" value="Enviar" id="enviarCont">          
