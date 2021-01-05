@@ -39,7 +39,7 @@ function verDetalle(i) {
          localStorage.setItem("contenido", JSON.stringify(detalleJSON))
          informacionDeContenido = JSON.parse(localStorage.contenido)
       HTMLCard2 = `<div id='detalles'>
-      <h2 class="blur">${informacionDeContenido.banda}</h2>
+      <h2 class="blur titulo" id='nombreArtista'>${informacionDeContenido.banda}</h2>
       <div class="d-flex flex-row cardband">
           <div>
               <img src="${informacionDeContenido.fotom}" alt="">
@@ -52,12 +52,12 @@ function verDetalle(i) {
               <p><b>Breve historia sobre el artista: </b> ${informacionDeContenido.descripcion}</p>
           </div>
       </div>
-      <button onclick="volverRoaster()">Volver a lista de artistas</button>
+      <button class='altsecbtn' onclick="volverRoaster()">Volver a lista de artistas</button>
       </div>`
    $('#NA').hide();
    $('#contenido').html(HTMLCard2)
-   $('#roaster').css({backgroundColor: "#ffe"})
-         // location.href = "detail.html"
+   $('#roaster').css({backgroundColor: "#FBA2CD"})
+   $('#nombreArtista').css({color: "#683453"})
          console.log(detalleJSON)
       } else {
          console.error("No se encontró el elemento: " + i)

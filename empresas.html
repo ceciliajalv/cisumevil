@@ -17,7 +17,6 @@
         <script defer src="js/inforoaster.js"></script>
         <script defer src="js/jsonservicios.js"></script>
         <script defer src="js/administoservicios.js"></script>
-        <!-- <script defer src="js/animaciones.js"></script> -->
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" href="./css/styles.css">
     </head>
@@ -52,16 +51,18 @@
               </nav>    
         </header>
         <section id="hero" class="d-flex flex-column justify-content-center align-items-start">
-            <h1 class="blur">Cisum Evil</h1>
-            <h3 class="blur">Booking & Management</h3>
+            <div class="herobox">
+                <h1 class="blur">Cisum Evil</h1>
+                <h3 class="blur">Booking & Management</h3>
+            </div>
         </section>
         <section id="aboutUs">
             <h2 class="blur titulo">Sobre nosotros</h2>
-            <h4 class="blur">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quos perspiciatis autem. Vero totam, harum exercitationem animi eius voluptates quia excepturi ipsam, deserunt sed nesciunt, incidunt aliquid mollitia ut officia cumque itaque architecto doloribus quos fugiat magni odit dicta voluptate? Voluptatibus officiis molestias odio assumenda quidem asperiores quibusdam? Reiciendis consequuntur nostrum perspiciatis deleniti excepturi esse commodi minus impedit dolorum libero, nam totam eum, sed voluptate quasi beatae nobis veritatis eos. Nobis quasi molestias explicabo sint impedit labore mollitia molestiae pariatur?</h4>
+            <h4 class="blur">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, aliquid. Officiis, excepturi illum debitis sint quia veniam nostrum quas tenetur consequuntur facilis neque obcaecati quidem veritatis architecto laborum dolorum commodi? Quod sunt illum iste animi maxime quos eius! Hic odit culpa saepe sit, aspernatur molestias beatae obcaecati ratione dolorem quam commodi facere aperiam recusandae natus totam cupiditate consectetur sed fuga deleniti cum. Hic dicta nihil repudiandae quisquam, consequatur, iste id recusandae, consectetur numquam accusantium ad expedita. Deserunt quam dolorem doloremque aut vitae omnis, blanditiis numquam quaerat sit? Velit sequi ea expedita maxime reprehenderit accusamus voluptatum earum aut odio, nam aliquam? In aliquam vero modi velit sint esse nemo laudantium illum eveniet doloribus, dicta enim totam repellendus amet! Illo esse amet tempora eligendi quisquam fugiat, dignissimos sequi voluptas quam voluptates modi minus officia dolorum iure ab nostrum numquam! Aut, doloremque necessitatibus?</h4>
         </section>
         <section id="servicios">
-            <div id="adquirir">
-                <h2>Adquiera nuestros servicios profesionales</h2>
+            <div id="adquirir" class="blur">
+                <h2 class="titulo">Servicios profesionales</h2>
                 <div class="productos-lista d-flex flex-row justify-content-around">
                 <table>
                     <thead>
@@ -76,11 +77,11 @@
                 </table>
                 </div>
             <div>
-                <p>*Adquiriendo cualquiera de nuestros servicios serás agregado a nuestras playlist de Spotify para que todos nuestros seguidores puedan conocer tu música.
-                <br> **Por favor, si sos de Santa Fe o Córdoba comunicate con nosotros por e-mail o formulario de contacto primero para consultar disponibilidad.
-                <br> ***Asesoría sobre registro y legales solo disponible en Argentina.</p>
+                <p class="pserv">*No es requisito excluyente la contratación de alguno de nuestros artistas para acceder a estos servicios.
+                <br>**Para adquirir cualquiera de estos servicios le solicitamos llenar nuestro formulario de contacto con el mayor detalle sobre el evento a ser desarrollado. Nos pondremos en contacto a la brevedad con la respuesta a su consulta.
+                </p>
                 <div class="d-flex flex-row">
-                    <button onclick="volverserv()">Volver</button>
+                    <button class="altservbtn" onclick="volverserv()">Volver</button>
                     <a href="#contactanos"><button> Contactate por estos servicios</button></a>
                 </div>
             </div>
@@ -99,22 +100,23 @@
                 </div>
             </div>
             <div class="servicios-caja d-flex flex-column p-5 divserviciosprof align-contet-center col-md-8 ">
-                <h3>Servicios profesionales</h3>
+                <h3 class="blur">Servicios profesionales para empresas</h3>
                 <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, aut reprehenderit laborum exercitationem neque sunt voluptas, necessitatibus eos iste quidem praesentium laboriosam deserunt rerum impedit!</h4>
                 <button id="btnserv" onclick="ocultoServicios ()"> Ver servicios profesionales </button>
             </div>
             </div>
             </div>
         </section>
+        <div id="parallaxuno"></div>
         <section id="roaster">
             <h2 class="blur titulo" id="NA">Nuestros Artistas</h2>
-            <div id="contenido" class="roaster-lista d-flex flex-row justify-content-around"></div>
+            <div id="contenido" class="roaster-lista blur d-flex flex-row justify-content-around"></div>
         </section>
         <section id="contrataciones" class="d-flex flex-row">
             <div class="col-md-6">
             <h2 class="blur titulo">Contratataciones</h2>
-            <h4>¿Querés tener a alguno de nuestros artistas en tu evento? Conocé las tarifas</h4>
-            <fieldset class="d-flex flex-column">
+            <h4 class="blur">¿Querés tener a alguno de nuestros artistas en tu evento? Conocé las tarifas</h4>
+            <fieldset class="d-flex flex-column blur">
                 <label for="opcion_artistas">Artista</label>
                 <select name="opcion_artistas" id="opcion_artistas">
                 </select>   
@@ -132,15 +134,17 @@
             </fieldset>
             </div>
         </section>
+        <div id="parallaxdos"></div>
         <section id="contactanos">
             <h2 class="blur titulo">Contactanos</h2>
-            <form onsubmit="gracias()" method="POST" class="formulario" id="formContact">
+            <div class="d-flex flex-row justify-content-between blur">
+                <form onsubmit="gracias()" method="POST" class="formulario blur" id="formContact">
                 <fieldset class="d-flex flex-column" id="fieldsetForm">
                     <label for="name">Nombre</label>
                     <input type="text" name="name" id="name" placeholder="Tu nombre" class="campoForm">
                     <label for="lastName">Apellido</label>
                     <input type="text" name="lastName" id="lastName" placeholder="Tu Apellido" class="campoForm">
-                    <div>
+                    <div class="checkbox">
                         <input type="checkbox" name="empresa" value="si" class="check" class="campoForm">Me contacto en representación de una empresa u organización
                     </div>  
                     <label for="email">E-mail</label>
@@ -148,22 +152,70 @@
                     <label for="opcion_contacto">Motivo de contacto</label>
                     <select name="opcion_contacto" id="opcion_contacto" class="campoForm">
                         <option>Representación</option>
-                        <option>Contrataciones</option>                  
+                        <option>Contrataciones</option> 
+                        <option>Servicios profesionales</option>                 
                         <option>Prensa</option>
                         <option>Tour</option>             
                         <option>Otros</option>
                     </select>             
-                    <div>
+                    <div class="checkbox">
                         <input type="checkbox" name="newsletter" value="si" class="check" class="campoForm">Deseo suscribirme al newsletter
                     </div>      
                     <label for="asunto">Asunto</label>
                     <input type="text" name="asunto" id="asunto" placeholder="Breve descripción del mensaje" class="campoForm"> 
-                    <textarea name="mensaje" cols="25" rows="10" placeholder="Mensaje"></textarea> 
-                    <input type="submit" name="enviar" onclick="gracias ()" value="Enviar">    
+                    <textarea name="mensaje" cols="25" rows="10" placeholder="Mensaje" id="mensajecontact"></textarea> 
+                    <div id="datoinvalido"></div>
+                    <input type="submit" name="enviar" onclick="resultadoGracias ()" value="Enviar" class="enviarinput" id="enviarinput">    
                 </fieldset>
                 <h3 id="muchasGracias"></h3>
-            </form>
+                </form>
+                <div id="validarbox">
+                <button id="validarDatos" onclick="errorDatos()">Confirmar datos</button>
+                </div>
+                <div class="blur othercontact">
+                    <h3>O nos pueden encontrar en:</h3>
+                    <div class=" d-flex justify-content-center flex-column">
+                        <div class="d-flex flex-column col-12 col-md-12 contact-block">
+                            <h4>Representación</h4>
+                            <p>
+                            C. Alvarez  <br>
+                            Domicilio: Lorem ipsum dolor 1234, of:1, CABA, Argentina<br>
+                            Teléfono: +(123)4567890 int. 1<br>
+                            E-mail: <a href="mailto:management@cisumevil.com">management@cisumevil.com</a>       
+                            </p>
+                        </div>
+                        <div class="d-flex flex-column col-12 col-md-12 contact-block">
+                            <h4>Contrataciones</h4>
+                            <p>
+                            J. Alvarez  <br>
+                            Domicilio: Lorem ipsum dolor 1234, of:1, CABA, Argentina<br>
+                            Teléfono: +(123)4567890 int. 2<br>
+                            E-mail: <a href="mailto:booking@cisumevil.com">booking@cisumevil.com</a>       
+                            </p>
+                        </div>
+                        <div class="d-flex flex-column col-12 col-md-12 contact-block">
+                            <h4>Servicios profesionales</h4>
+                            <p>
+                            N. Alvarez  <br>
+                            Domicilio: Lorem ipsum dolor 1234, of:2, CABA, Argentina<br>
+                            Teléfono: +(123)4567890 int. 3<br>
+                            E-mail: <a href="mailto:services@cisumevil.com">services@cisumevil.com</a>       
+                            </p>
+                        </div>
+                        <div class="d-flex flex-row plataformas justify-content-between">
+                            <img src="./img/plataformas/facebook.png" alt="Facebook">
+                            <img src="./img/plataformas/instagram.png" alt="Instagram">
+                            <img src="./img/plataformas/spotify.png" alt="Spotify">
+                            <img src="./img/plataformas/twitter.png" alt="Twitter">
+                            <img src="./img/plataformas/youtube.png" alt="Youtube">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+        <div id="footercopy" class="d-flex justify-content-center align-items-center">
+            <p>©Cisum Evil | Designed by <a href="https://www.linkedin.com/in/alvarez-cecilia-j">Cecilia Alvarez | 2020</a></p>
+        </div>
     <script src="js/bootstrap/popper.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     </body>

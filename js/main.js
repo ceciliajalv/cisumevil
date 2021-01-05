@@ -33,8 +33,6 @@ function opcion_tipo() {
     }
 }
 opcion_tipo();
-
-// $( document ).ready(function() 
-// {
-//    alert( "Gracias por su visita! Le informamos que debido a la pandemia del COVID19 no estamos realizando contrataciones para el primer trimestre del 2021. Le pedimos disculpas por las molestias. Ante cualquier duda puede llenar nuestro formulario de contacto o enviarnos un e-mail a info@cisumevil.com.ar" );
-// });
+debugger
+$(".blur").hide();
+$(".blur").fadeIn("slow");

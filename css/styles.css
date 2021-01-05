@@ -5,7 +5,7 @@
 }
 h1 {
     font-size: 5rem;
-    color: #F40076;
+    color: #DE76A9;
     -webkit-text-stroke: 2px #533B4D;
     font-family: 'Bungee Inline', cursive;
 }
@@ -31,11 +31,18 @@ input, select {
     font-size: 1.1rem;
     background: none;
     border: none;
-    border-bottom: purple solid 1px;
-    color: grey;
+    border-bottom: #6D517A solid 1px;
+    color: #6D517A;
     margin-bottom: 1rem;
     margin-top: 0rem;
+    padding-left: 0.5rem;
 }
+#contactanos input, #contactanos select, #contactanos textarea {
+    color: #533B4D;
+}
+
+
+
 input:focus, select:focus {
     font-family: 'Lobster', cursive;
     font-size: 1.1rem;
@@ -43,12 +50,9 @@ input:focus, select:focus {
     border: none;
     outline: none;
     border-bottom: black solid 1.5px;
-    color: purple;
+    color: #6D517A;
 }
-input#enviarCont {
-    border: black solid 1px;
-    background-color: white;
-}
+
 th {
     font-family: 'Bungee Inline', cursive;
 }
@@ -64,12 +68,12 @@ a {
 li a { 
     font-size: 1.4rem;
     margin-top: -0.4rem;
-    color: grey;
+    color: #6D517A;
 }
 h2.logo {
     font-size: 2rem;
     padding: 0rem;
-    color: #F40076;
+    color: #DE76A9;
 }
 header {
     background-color: #E9E0F5;
@@ -77,12 +81,13 @@ header {
     top: 0rem;
     height: 4rem;
     z-index: 100;
+    filter: drop-shadow(2px -2px 6px #6D517A);
 }
 .navbar-bordeaux, .navbar-nav, .nav-link{
     color: #533B4D;
 }
 .nav-link:hover, .navbar-bordeaux:hover, .navbar-nav:hover, .nav-item:hover{ 
-    color: #F40076;
+    color: #DE76A9;
 }
 section {
     padding-left: 1rem;
@@ -90,31 +95,42 @@ section {
     margin-top: 0rem;
 }
 section#hero {
-    height: 100vh;
-    background-color: #8158FF;
-    background-image: url(../img/concert.jpg);
+    height: 95vh;
+    background-color: #C14A86;
+    background-image: url(../img/filter/concert3\ purple.jpg);
     background-size: cover;
+    background-position-y: -7rem;
 }
 section#aboutUs, section#contrataciones {
     background-color: #FDD8E9;
 }
 section#servicios, section#contactanos, section#infoart {
-    background-color: #B892FF;
+    background-color: #C14A86;
+}
+section#servicios {
+    filter: drop-shadow(2px 9px 12px #7C2D58);
 }
 section#roaster, section#adquirir {
-    background-color: #A41E62;
+    background-color: #7C2D58;
+    filter: drop-shadow(2px -6px 10px #7C2D58);
 }
 #roaster h2, #roaster h3 {
     color: #FDD8E9;
 }
-section#aboutUs, section#roaster, section#contrataciones, section#infoart {
+section#aboutUs, section#roaster, section#infoart {
     height: 100vh;
+}
+section#contrataciones {
+    height: 110vh;
+    filter: drop-shadow(2px 9px 12px #7C2D58);
 }
 section#servicios {
     height: 120vh;
 }
 section#contactanos{
-    height: 130vh;
+    height: 142vh;
+    filter: drop-shadow(2px -6px 10px #7C2D58);
+    overflow-y: hidden;
 }
 section#adquirir{
     height: 150vh;
@@ -123,10 +139,14 @@ section#adquirir h2, section#adquirir h4, section#adquirir table, section#adquir
     margin-left: 1rem;
     color: #FDD8E9;
 }
-
+.herobox {
+    background-color: rgba(233, 224, 245, 0.4);
+    margin-top: -4rem;
+    padding: 1rem;
+}
 #hero h3 {
     color: #533B4D;
-    -webkit-text-stroke: 0.5px #A41E62;
+    -webkit-text-stroke: 0.5px #DE76A9;
 }
 .roaster-lista, .productos-lista {
     padding-top: 3rem;
@@ -141,15 +161,23 @@ section#adquirir h2, section#adquirir h4, section#adquirir table, section#adquir
     column-gap: 2rem;
     padding: 2rem;
     text-align: justify;
+    margin-top: 3rem;
 }
 .formulario fieldset, #contrataciones fieldset {
     width: 35rem;
     border: none;
 }
+.formulario fieldset {
+    margin-left: 1rem;
+}
+#contactanos h2 {
+    margin-left: 1rem;
+}
 #muchasGracias {
     font-size: 1.8rem;
-    color: #A41E62;
+    color: #7C2D58;
     margin-top: 2rem;
+    margin-left: 1rem;
 }
 
 #resTarifa {
@@ -188,7 +216,7 @@ div#hero {
     font-size: 3rem;
 }
 .selectWeb {
-    background-color: #B892FF;
+    background-color: #C14A86;
     width: 100%;
     padding: 0px;
     margin: 0px;
@@ -229,9 +257,6 @@ div#soyFan:hover {
     width: 100%;
     font-size: 2.5rem;
 }
-#btnArt, #btnCont {
-    display: none;
-}
 .blur {
     transition: 0.5s;
 }
@@ -243,7 +268,7 @@ div.cardband {
     margin-left:1.5rem ;
 }
 div.infoband {
-    margin: 0rem 2.5rem 0rem 2rem;
+    margin: 1rem 2.5rem 0rem 2rem;
     text-align: justify;
 }
 .masinfo {
@@ -264,7 +289,8 @@ a.masinfo:hover {
 }
 #loading img {
     width: 100%;
-    filter: hue-rotate(21deg);
+    filter: hue-rotate(318deg) brightness(1);
+    opacity: 0.8;
 }
 .productos-lista table td:first-child, .productos-lista table th:first-child {
     width: 10rem;
@@ -308,5 +334,141 @@ a.masinfo:hover {
     text-align: right;
 }
 .carrito:hover {
-    filter: drop-shadow(2px 2px 2px purple);
+    filter: drop-shadow(2px 2px 2px #6D517A);
+}
+.nosub div, .nosub h2, .nosub h3, a.nosub {
+    text-decoration: none;
+}
+p.pserv {
+    padding-right: 2.2rem;
+    text-align: justify;
+}
+div.plataformas {
+    width: 25rem;
+    margin-right: 3rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    transform: translateX(79px);
+}
+.plataformas img:hover {
+    filter: drop-shadow(2px 4px 6px #533B4D);
+}
+.contact-block {
+    width: 30rem;
+    text-align: right;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+}
+.contact-block:first-child {
+    margin-top: 1rem;
+}
+.othercontact h3 {
+    text-align: right;
+    margin-right: 3.5rem;
+}
+
+a { 
+    color: #533B4D;
+}
+a:hover {
+    color: #7C2D58;
+    text-decoration: none;
+}
+#btnCont a {
+    color: #FDD8E9;
+}
+#btnCont a:hover {
+    color: #E9E0F5;
+    filter: drop-shadow(2px 6px 6px #DE76A9);
+}
+h3#btnCont {
+    color: #FDD8E9;
+    margin-top: 2rem;
+}
+h3#btnFan, h3#btnArt {
+    filter: drop-shadow(1px 1px 1px white);
+    margin-top: 2rem;
+}
+
+button, input#enviarCont, .enviarinput, #validarDatos{
+    width: 13rem;
+    display: flex;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    font-size: 1.05rem;
+    background-color: rgba(256, 256, 256, 0.6);
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    color: #533B4D;
+    padding-left: 0px;
+}
+.enviarinput {
+    background-color: rgba(256, 256, 256, 0.8);
+}
+button:hover, button:focus, input#enviarCont:hover, .enviarinput:hover, input#enviarCont:focus, .enviarinput:focus{
+    filter: drop-shadow(2px 4px 6px #DE76A9);
+}
+button.altsecbtn {
+    margin-left: 43.5%;
+}
+button.altservbtn {
+    margin-left: 33.5%;
+}
+#detalles {
+    transform: translateY(-3rem);
+}
+#validarbox{
+    transform: translateY(589px) translateX(192px);
+}
+textarea {
+    height: 7rem;
+    font-family: Lobster, cursive;
+    background-color: #C14A86;
+    padding-left: 0.5rem;
+    border: none;
+    border-bottom: #6D517A solid 1px;
+    border-right: #6D517A solid 1px;
+}
+#validarbox {
+    width: 14rem;
+    height: 3rem;
+    position: absolute;
+}
+
+#datoinvalido {
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.5);
+    margin-bottom: 10px;
+    border-radius: 0.3rem;
+}
+div#footercopy {
+    height: 3rem;
+    background-color: #E9E0F5;
+}
+#footercopy p {
+    padding-top: 1rem;
+    font-size: 1.1rem;
+}
+::placeholder {
+    color: #6B4C65;
+    opacity: 0.8;
+}
+#parallaxuno {
+    height: 70vh;
+    background-image: url(../img/filter/concert2\ purple.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+#parallaxdos {
+    height: 70vh;
+    background-image: url(../img/filter/micyluz\ purple.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+input.checkbox {
+    opacity: 0.1;
 }

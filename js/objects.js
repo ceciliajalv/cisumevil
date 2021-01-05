@@ -161,19 +161,6 @@ function obtenerShow(vsh) {
         }
 }
 
-// document.getElementById("transporte").onchange = transporte;
-
-// function transporte () {
-
-// }
-// document.getElementById("transporte").onblur = transporte();
-// function transporte (){
-//     var opViaje = document.getElementById("transporte").checked;
-//     if (transporte.opViaje == false)
-//     alert ("no esta marcado") 
-//     else  alert ("esta marcado")
-// }
-
 document.getElementById("enviarCont").onclick = tarifa;
 
 function tarifa() {
@@ -306,3 +293,4 @@ $(document.getElementById("QShows")).on('keypress',function(e) {
         alert('Este campo no permite comas');
     }
 });
+

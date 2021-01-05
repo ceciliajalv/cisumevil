@@ -42,23 +42,6 @@ function guardoCampo(campo) {
         ls.setItem(campo.id, campo.value)
 }
 
-
-//ls.setItem(clave, info)
-
-//var clave = d.getElementsByClassName() ;
-//d.getElementById("name").onblur = guardoCampo;
-
-//function guardoCampo () 
-
-//window.onload=function(){
-  //  name=d.getElementById('name');
-    //lastname=d.getElementById('lastName');
-  //  email=d.getElementById('email');
-//}
-
- //guardarDatos.nombre = nombre
-    //guardarDatos.apellido = apellido
-
     function artista(qMembers, qCrew, cars, cusd) {
         this.miembros = qMembers;
         this.crew = qCrew;

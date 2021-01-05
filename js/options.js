@@ -1,7 +1,6 @@
 document.getElementById("soyArt").onmouseover= focusArtistas
 
 function focusArtistas () {
-    //$("#soyArt").html("<h2 id='soyArtTx'>Soy artista</h2> <a href='artistas.html'><button id='btnArt'>Ingresar</button></a>"); 
     $("#btnArt").show(); 
     document.getElementById("soyArt").style.height="59vh"
     document.getElementById("hero").style.height="23vh"
@@ -16,13 +15,14 @@ function focusArtistas () {
     document.getElementById("cardW").style.marginTop="3rem"
     document.getElementById("soyCont").style.height="9vh"
     document.getElementById("soyFan").style.height="9vh"
-    document.getElementById("soyArtTx").style.fontSize="4rem"
-    // document.getElementById("btnArt").style.display="contents"
+    document.getElementById("soyArtTx").style.fontSize="3.5rem"
     document.getElementById("soyContTx").style.fontSize="2.5rem"
     document.getElementById("soyFanTx").style.fontSize="2.5rem"
     document.getElementById("soyArt").style.backgroundColor="none"
     document.getElementById("btnArt").style.fontSize="3rem"
-    document.getElementById("btnArt").style.backgroundColor="rgba(134, 103, 166, 0.5)"
+    document.getElementById("soyContTx").style.marginTop="0rem"
+    document.getElementById("soyArtTx").style.marginTop="4.5rem"
+    document.getElementById("soyFanTx").style.marginTop="0rem"
     $("#btnCont").hide(); 
     $("#btnFan").hide(); 
 }
@@ -46,13 +46,16 @@ function focusHero () {
     document.getElementById("soyContTx").style.fontSize="2.5rem"
     document.getElementById("soyFanTx").style.fontSize="2.5rem"
     document.getElementById("btnArt").style.display="none"
+    document.getElementById("soyContTx").style.marginTop="0rem"
+    document.getElementById("soyArtTx").style.marginTop="0rem"
+    document.getElementById("soyFanTx").style.marginTop="0rem"
     $("#btnCont").hide(); 
     $("#btnFan").hide(); 
 }
 document.getElementById("soyCont").onmouseover= focusEmpresa
 
 function focusEmpresa () {
-    $("#btnCont").show();
+    $("#btnCont").fadeIn();
     document.getElementById("soyCont").style.height="59vh"
     document.getElementById("hero").style.height="23vh"
     document.getElementById("cardW").style.flexDirection="row"
@@ -67,9 +70,12 @@ function focusEmpresa () {
     document.getElementById("soyArt").style.height="9vh"
     document.getElementById("soyFan").style.height="9vh"
     document.getElementById("soyArtTx").style.fontSize="2.5rem"
-    document.getElementById("soyContTx").style.fontSize="4rem"
+    document.getElementById("soyContTx").style.fontSize="3.5rem"
     document.getElementById("soyFanTx").style.fontSize="2.5rem"
     document.getElementById("btnArt").style.display="none"
+    document.getElementById("soyContTx").style.marginTop="4.5rem"
+    document.getElementById("soyArtTx").style.marginTop="0rem"
+    document.getElementById("soyFanTx").style.marginTop="0rem"
     $("#btnFan").hide(); 
 }
 
@@ -91,9 +97,13 @@ function focusFan () {
     document.getElementById("soyCont").style.height="9vh"
     document.getElementById("soyArtTx").style.fontSize="2.5rem"
     document.getElementById("soyContTx").style.fontSize="2.5rem"
-    document.getElementById("soyFanTx").style.fontSize="4rem"
+    document.getElementById("soyFanTx").style.fontSize="3.5rem"
     document.getElementById("btnArt").style.display="none"
+    document.getElementById("btnFan").style.fontSize="3rem"
+    document.getElementById("soyContTx").style.marginTop="0rem"
+    document.getElementById("soyArtTx").style.marginTop="0rem"
+    document.getElementById("soyFanTx").style.marginTop="4.5rem"
     $("#btnCont").hide(); 
-    $("#btnFan").show(); 
+    $("#btnFan").fadeIn(); 
 }
 
