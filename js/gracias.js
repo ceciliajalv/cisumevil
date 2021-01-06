@@ -28,29 +28,30 @@ function getmensaje() {
 
 $("#enviarinput").hide();
 function errorDatos() {
-    debugger
+    var errorform = document.getElementById("datoinvalido")
     if (nombre == "") {
-        var errorform = document.getElementById("datoinvalido")
         errorform.innerHTML = `Por favor complete todos los campos`
         errorform.style.border="1px solid darkred"
     }
     else if (apellido == "") {
-        var errorform = document.getElementById("datoinvalido")
         errorform.innerHTML = `Por favor complete todos los campos`
+        errorform.style.border="1px solid darkred"
     }
     else if (email == "") {
-        var errorform = document.getElementById("datoinvalido")
         errorform.innerHTML = `Por favor complete todos los campos`
+        errorform.style.border="1px solid darkred"
     }
     else if (asunto == "") {
-        var errorform = document.getElementById("datoinvalido")
         errorform.innerHTML = `Por favor complete todos los campos`
+        errorform.style.border="1px solid darkred"
     }
     else if (mensaje == "") {
-        var errorform = document.getElementById("datoinvalido")
         errorform.innerHTML = `Por favor complete todos los campos`
+        errorform.style.border="1px solid darkred"
     }
     else {
+        errorform.innerHTML = ""
+        errorform.style.border="none"
         $("#validarDatos").hide();
         $("#enviarinput").fadeIn();
     }
@@ -68,16 +69,5 @@ function resultadoGracias() {
     $(".othercontact").hide()
 }
 
-// // var email = document.getElementById()
-// // email.setCustomValidity("incorrecto")
-// // const email = document.getElementById("email");
-
-// email.addEventListener("input", function (event) {
-//   if (email.validity.typeMismatch) {
-//     email.setCustomValidity("¡Se esperaba una dirección de correo electrónico!");
-//   } else {
-//     email.setCustomValidity("");
-//   }
-// });
 
  

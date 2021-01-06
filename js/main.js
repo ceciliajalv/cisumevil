@@ -33,6 +33,5 @@ function opcion_tipo() {
     }
 }
 opcion_tipo();
-debugger
 $(".blur").hide();
 $(".blur").fadeIn("slow");

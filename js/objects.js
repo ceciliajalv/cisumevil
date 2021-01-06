@@ -88,7 +88,6 @@ function obtenerVen(vven) {
 document.getElementById("QShows").onchange = obtenerShow;
 function obtenerShow(vsh) {
     var show = document.getElementById("QShows").value;
-    debugger
     obtenerShow.vsh = show
     shows = obtenerShow.vsh
     switch (obtenerShow.vsh) {
@@ -186,7 +185,6 @@ function tarifa() {
         transporte = 0
         idTransporte = ", con transporte a cargo del contratante, "
     }
-    debugger
     setTimeout(()=>{
     $("#loading").remove(); 
     if (tipos == "Seleccione el tipo de evento")

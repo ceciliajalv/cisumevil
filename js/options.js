@@ -1,5 +1,7 @@
 document.getElementById("soyArt").onmouseover= focusArtistas
-
+$("#btnCont").hide(); 
+$("#btnFan").hide(); 
+$("#btnArt").hide(); 
 function focusArtistas () {
     $("#btnArt").show(); 
     document.getElementById("soyArt").style.height="59vh"

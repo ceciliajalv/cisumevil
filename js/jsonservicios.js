@@ -14,7 +14,7 @@ let SERVICIOS = [
     {
         "servid": 3,
         "servicio":"Cobertura show en vivo",
-        "descripcion": "Realizamos la cobertura audiovisual de su evento con calidad profesional para que obtenga el mejor contenido para sus redes, video corporativo o lo que necesite. Este servicio incluye grabación a 3 cámaras de los espectáculos en vivo y a 4 cámaras el resto del evento (backstage, ingreso de invitados, público), la postproducción y montaje del show completo + 3 sneak peaks/trailers publicitarios de 1 minuto para redes sociales o 1 video aftermovie de 10 minutos o menos. (Servicio disponible en Buenos Airesz, CABA, Santa Fe y Córdoba)" ,
+        "descripcion": "Realizamos la cobertura audiovisual de su evento con calidad profesional para que obtenga el mejor contenido para sus redes, video corporativo o lo que necesite. Este servicio incluye grabación a 3 cámaras de los espectáculos en vivo y a 4 cámaras el resto del evento (backstage, ingreso de invitados, público), la postproducción y montaje del show completo + 3 sneek peaks/trailers publicitarios de 1 minuto para redes sociales o 1 video aftermovie de 10 minutos o menos. (Servicio disponible en Buenos Airesz, CABA, Santa Fe y Córdoba)" ,
         "precio": "$45000"
     },
     {

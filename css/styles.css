@@ -472,3 +472,7 @@ div#footercopy {
 input.checkbox {
     opacity: 0.1;
 }
+#enviarinput:hover{
+    background-color: #543B50;
+    color: #E9E0F5;
+}
